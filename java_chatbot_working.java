@@ -39,16 +39,27 @@ import java.util.Random;
                     result.append(' ');
                 }
                 switch(word) {
-                    case "lower":
+                    case "lower": // data_1.txt
+                        
+                        try {             
+                            FileWriter output_1 = new FileWriter("new_file.txt", true);
+                            output_1.write(word);
+                            output_1.close();
+                        }
+
+                        catch (Exceptionn e) {
+                            e.getStackTrace();
+                        }
                         word = "higher";
                         break;
-                    case "higher":
+                    case "higher": // data_2.txt
                         word = "lower";
+                        FileWriter output_2 = new FileWriter("new_file_2.txt", true);
                         break;
-                    case "medium":
+                    case "medium": // data_3.txt
                         word = "Republican";
                         break;
-                    case "free":
+                    case "free": // data_4.txt
                         word = "Democrat";
                         break;
                     }
