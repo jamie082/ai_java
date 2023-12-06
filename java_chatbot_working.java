@@ -42,12 +42,11 @@ import java.util.Random;
                     case "lower": // data_1.txt
                         word = "higher";
                         try {
-                            FileWriter output_1 = new FileWriter("C:/data_jamie/data_1.txt", true);
-                            for (int o = 0; o < word.length(); o++)
-                                output_1.write(word.charAt(i));
-                                System.out.println("Successfully written");
-                                // close the file
-                            output_1.close();
+                            String str = word;
+                            File newTextFile = new File("C:/DATA_JAMIE/higher.txt");
+                            FileWriter fw = new FileWriter(newTextFile);
+                            fw.write(str);
+                            fw.close();
                         }
                         catch (Exception e) {
                             e.getStackTrace();
@@ -55,6 +54,17 @@ import java.util.Random;
                         break;
                     case "higher": // data_2.txt
                         word = "lower";
+                        try {
+                            String str = word;
+                            File newTextFile = new File("C:/DATA_JAMIE/lower.txt");
+                            FileWriter fw = new FileWriter(newTextFile):
+                            fw.write(str);
+                            fw.close();
+                        }
+                        catch (Exception e);
+                        {
+                            e.getStackTrace();
+                        }
                         break;
                     case "medium": // data_3.txt
                         word = "Republican";
