@@ -45,7 +45,7 @@ import java.util.Random;
                             String str = word;
                             File newTextFile = new File("C:/DATA_JAMIE/higher.txt");
                             FileWriter fw = new FileWriter(newTextFile);
-                            fw.write(str);
+                            fw.write(word);
                             fw.close();
                         }
                         catch (Exception e) {
@@ -55,14 +55,13 @@ import java.util.Random;
                     case "higher": // data_2.txt
                         word = "lower";
                         try {
-                            String str = word;
+                            String str_2 = word;
                             File newTextFile = new File("C:/DATA_JAMIE/lower.txt");
-                            FileWriter fw = new FileWriter(newTextFile):
+                            FileWriter fw = new FileWriter(newTextFile);
                             fw.write(str);
                             fw.close();
                         }
-                        catch (Exception e);
-                        {
+                        catch (Exception e) {
                             e.getStackTrace();
                         }
                         break;
@@ -75,17 +74,7 @@ import java.util.Random;
                     }
                 result.append(word);
             }
-            /*
-            try {
-                FileWriter output_2 = new FileWriter("c:/data_2.txt", true); // create second data file
-                output_2.write(word);
-                System.out.println("Successfully written");
-                output_2.close();
-            }
-            catch (Exception e) {
-                e.getStackTrace();
-            }
-*/
+
             String newVersion = result.toString();
             if (!newVersion.equals(userWords)) {
                 mirrored = newVersion;
