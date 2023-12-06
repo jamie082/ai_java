@@ -7,12 +7,11 @@ import java.util.Random;
  class loop {
 
     public static void main(String[] args) {
-        String[] cannedPhrases = {"Yes",   // questions to be asked inside the main program loop for AI
-                                  "What do you want to do about lower taxes for the rich?",
-                                  "What do you want to do about people who earn higher than $450,000 yearly?",
+        String[] cannedPhrases = {"Do you want free universal income for people with no income?",   // Democrat
+                                  "What do you want to do about lower taxes for the rich?", // Democrat
+                                  "What do you want to do about people who earn higher than $450,000 yearly?",  // Republican
                                   "What do you want to do about universal basic income for democratic states?",
-                                  "Interesting...",
-                                  "Indeed"};
+                                  "Do you want people who make $150,000 and have no kids to pay higher taxes?"};
         int cannedTimes = cannedPhrases.length;
         Random rand = new Random();
         Scanner conversationStart = new Scanner(System.in);  
@@ -55,10 +54,10 @@ import java.util.Random;
                     case "higher": // data_2.txt
                         word = "lower";
                         try {
-                            String str_2 = word;
+                            String str = word;
                             File newTextFile = new File("C:/DATA_JAMIE/lower.txt");
                             FileWriter fw = new FileWriter(newTextFile);
-                            fw.write(str);
+                            fw.write(word);
                             fw.close();
                         }
                         catch (Exception e) {
@@ -86,6 +85,7 @@ import java.util.Random;
             transcript[++index] = userWords;
             transcript[++index] = mirrored;
         }
+        Scanner myObj2 = new Scanner(System.in);
         System.out.println("What political party do you affiliate with?");  // ask final question in program to determin which politial party they are affiliated with
     }
 }
