@@ -10,8 +10,8 @@ import java.util.Random;
         String[] cannedPhrases = {"Do you want free universal income for people with no income?",   // Democrat
                                   "What do you want to do about lower taxes for the rich?", // Democrat
                                   "What do you want to do about people who earn higher than $450,000 yearly?",  // Republican
-                                  "What do you want to do about universal basic income for democratic states?",
-                                  "Do you want people who make $150,000 and have no kids to pay higher taxes?"};
+                                  "What do you want to do about universal basic income for democratic states?", // Democrat
+                                  "Do you want people who make $150,000 and have no kids to pay higher taxes?"}; // Republican
         int cannedTimes = cannedPhrases.length;
         Random rand = new Random();
         Scanner conversationStart = new Scanner(System.in);  
@@ -64,11 +64,31 @@ import java.util.Random;
                             e.getStackTrace();
                         }
                         break;
-                    case "medium": // data_3.txt
-                        word = "Republican";
-                        break;
-                    case "free": // data_4.txt
+                    case "free": // data_3.txt
                         word = "Democrat";
+                        try {
+                            String str = word;
+                            File newTextFile = new File("C:/DATA_JAMIE/democrat.txt");
+                            FileWriter fw = new FileWriter(newTextFile);
+                            fw.write(word);
+                            fw.close();
+                        }
+                        catch (Exception e) {
+                            e.getStackTrace();
+                        }
+                        break;
+                    case "universal": // data_4.txt
+                        word = "Democrat";
+                        try {
+                            String str = word;
+                            File newTextFile = new File("C:/DATA_JAMIE/universal.txt");
+                            FileWriter fw = new FileWriter(newTextFile);
+                            fw.write(word);
+                            fw.close();
+                        }
+                        catch (Exception e) {
+                            e.getStackTrace();
+                        }
                         break;
                     }
                 result.append(word);
@@ -85,7 +105,11 @@ import java.util.Random;
             transcript[++index] = userWords;
             transcript[++index] = mirrored;
         }
-        Scanner myObj2 = new Scanner(System.in);
+        Scanner myObj = new Scanner(System.in);
         System.out.println("What political party do you affiliate with?");  // ask final question in program to determin which politial party they are affiliated with
+        String pol_party = myObj.nextLine();
+
+        System.out.println("Your political party is " + pol_party);
+
     }
 }
