@@ -7,7 +7,7 @@ import java.util.Random;
  class loop {
 
     public static void main(String[] args) {
-        String[] cannedPhrases = {"Yes",
+        String[] cannedPhrases = {"Yes",   // questions to be asked inside the main program loop for AI
                                   "What do you want to do about lower taxes for the rich?",
                                   "What do you want to do about people who earn higher than $450,000 yearly?",
                                   "What do you want to do about universal basic income for democratic states?",
@@ -25,7 +25,7 @@ import java.util.Random;
         System.out.println(transcript[0]);
         
         int index = -1;
-        for (int i = 0; i < 4; i++) { // Main program loop
+        for (int i = 0; i < rounds; i++) { // Main program loop
             String userWords = conversationStart.nextLine();
             String mirrored;
             StringBuilder result = new StringBuilder();
@@ -38,23 +38,23 @@ import java.util.Random;
                 else {
                     result.append(' ');
                 }
-                switch(word) {
+                switch(word) {  // use switch keyword for AI
                     case "lower": // data_1.txt
-                        
-                        try {             
-                            FileWriter output_1 = new FileWriter("new_file.txt", true);
-                            output_1.write(word);
+                        word = "higher";
+                        try {
+                            FileWriter output_1 = new FileWriter("C:/data_jamie/data_1.txt", true);
+                            for (int o = 0; o < word.length(); o++)
+                                output_1.write(word.charAt(i));
+                                System.out.println("Successfully written");
+                                // close the file
                             output_1.close();
                         }
-
-                        catch (Exceptionn e) {
+                        catch (Exception e) {
                             e.getStackTrace();
                         }
-                        word = "higher";
                         break;
                     case "higher": // data_2.txt
                         word = "lower";
-                        FileWriter output_2 = new FileWriter("new_file_2.txt", true);
                         break;
                     case "medium": // data_3.txt
                         word = "Republican";
@@ -65,6 +65,17 @@ import java.util.Random;
                     }
                 result.append(word);
             }
+            /*
+            try {
+                FileWriter output_2 = new FileWriter("c:/data_2.txt", true); // create second data file
+                output_2.write(word);
+                System.out.println("Successfully written");
+                output_2.close();
+            }
+            catch (Exception e) {
+                e.getStackTrace();
+            }
+*/
             String newVersion = result.toString();
             if (!newVersion.equals(userWords)) {
                 mirrored = newVersion;
@@ -76,7 +87,6 @@ import java.util.Random;
             transcript[++index] = userWords;
             transcript[++index] = mirrored;
         }
-        System.out.println("Thank you for chatting with me! Come back soon!");
-        System.out.println(" ");
+        System.out.println("What political party do you affiliate with?");  // ask final question in program to determin which politial party they are affiliated with
     }
 }
