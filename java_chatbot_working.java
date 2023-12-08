@@ -37,6 +37,11 @@ import java.util.Random;
                 else {
                     result.append(' ');
                 }
+                int myHigher = 001;
+                int myLower = 002;
+                int myFree = 003;
+                int myUniversal = 004;
+
                 switch(word) {  // use switch keyword for AI
                     case "lower": // data_1.txt
                         word = "higher";
@@ -108,8 +113,8 @@ import java.util.Random;
         Scanner myObj = new Scanner(System.in);
         System.out.println("What political party do you affiliate with?");  // ask final question in program to determin which politial party they are affiliated with
         String pol_party = myObj.nextLine();
-
         System.out.println("Your political party is " + pol_party);
-
+        // Compute the output for what party you are affiliated with
+        System.out.println("The computer guessed that you were affiliated with: ", + guessed_variable)
     }
 }
