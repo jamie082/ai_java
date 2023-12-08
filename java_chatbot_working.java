@@ -23,6 +23,8 @@ import java.util.Random;
         transcript[0] = "Sounds great! How are you doing today?";
         System.out.println(transcript[0]);
         int index = -1;
+        int guessed_variable;
+        int myHigher = 001, myLower = 002, myFree = 003, myUniversal = 004;
         for (int i = 0; i < rounds; i++) { // Main program loop
             String userWords = conversationStart.nextLine();
             String mirrored;
@@ -45,7 +47,6 @@ import java.util.Random;
                             FileWriter fw = new FileWriter(newTextFile);
                             fw.write(word);
                             fw.close();
-                            int myLower = 002;
                             ++myLower;
                         }
                         catch (Exception e) {
@@ -60,7 +61,6 @@ import java.util.Random;
                             FileWriter fw = new FileWriter(newTextFile);
                             fw.write(word);
                             fw.close();
-                            int myHigher = 001;
                             ++myHigher;
                         }
                         catch (Exception e) {
@@ -75,7 +75,6 @@ import java.util.Random;
                             FileWriter fw = new FileWriter(newTextFile);
                             fw.write(word);
                             fw.close();
-                            int myFree = 003;
                             ++myFree;
                         }
                         catch (Exception e) {
@@ -90,7 +89,6 @@ import java.util.Random;
                             FileWriter fw = new FileWriter(newTextFile);
                             fw.write(word);
                             fw.close();
-                            int myUniversal = 004;
                             ++myUniversal;
                         }
                         catch (Exception e) {
@@ -99,6 +97,7 @@ import java.util.Random;
                         break;
                     }
                 result.append(word);
+
             }
 
             String newVersion = result.toString();
@@ -117,8 +116,7 @@ import java.util.Random;
         String pol_party = myObj.nextLine();
         System.out.println("Your political party is " + pol_party);
         // Compute the output for what party you are affiliated with
-        int guessed_variable = 0;
-        //guessed_variable = myLower + myHigher + myFree + myUniveral;
-        //System.out.println("The computer guessed that you were affiliated with: ", + guessed_variable)
+        guessed_variable = myHigher + myLower + myFree + myUniversal;
+        System.out.println("The computer guessed that you were affiliated with: ", + guessed_variable);
     }
 }
