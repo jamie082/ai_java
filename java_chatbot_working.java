@@ -6,7 +6,7 @@ import java.util.Random;
 
  class loop {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {  // type in these questions in the prompt to ask it the questions
         String[] cannedPhrases = {"Do you want free universal income for people with no income?",   // Democrat
                                   "What do you want to do about lower taxes for the rich?", // Democrat
                                   "What do you want to do about people who earn higher than $450,000 yearly?",  // Republican
@@ -15,14 +15,13 @@ import java.util.Random;
         int cannedTimes = cannedPhrases.length;
         Random rand = new Random();
         Scanner conversationStart = new Scanner(System.in);  
-        System.out.println("Machine learning AI program for WGU written by Jamie Morrissey\nin December 2023, insert Left-Wing, Right-Wing, Democrat, or Republican for input of choice.");
+        System.out.println("Machine learning AI program for WGU written by Jamie Morrissey\nin December 2023, Please see source file for input choices.");
         System.out.println("How many rounds of conversation would you like to have?\n");
         int rounds = conversationStart.nextInt();
         conversationStart.nextLine();
         String[] transcript = new String[2 * rounds + 1];
         transcript[0] = "Sounds great! How are you doing today?";
         System.out.println(transcript[0]);
-        
         int index = -1;
         for (int i = 0; i < rounds; i++) { // Main program loop
             String userWords = conversationStart.nextLine();
@@ -37,11 +36,6 @@ import java.util.Random;
                 else {
                     result.append(' ');
                 }
-                int myHigher = 001;
-                int myLower = 002;
-                int myFree = 003;
-                int myUniversal = 004;
-
                 switch(word) {  // use switch keyword for AI
                     case "lower": // data_1.txt
                         word = "higher";
@@ -51,6 +45,8 @@ import java.util.Random;
                             FileWriter fw = new FileWriter(newTextFile);
                             fw.write(word);
                             fw.close();
+                            int myLower = 002;
+                            ++myLower;
                         }
                         catch (Exception e) {
                             e.getStackTrace();
@@ -64,6 +60,8 @@ import java.util.Random;
                             FileWriter fw = new FileWriter(newTextFile);
                             fw.write(word);
                             fw.close();
+                            int myHigher = 001;
+                            ++myHigher;
                         }
                         catch (Exception e) {
                             e.getStackTrace();
@@ -77,6 +75,8 @@ import java.util.Random;
                             FileWriter fw = new FileWriter(newTextFile);
                             fw.write(word);
                             fw.close();
+                            int myFree = 003;
+                            ++myFree;
                         }
                         catch (Exception e) {
                             e.getStackTrace();
@@ -90,6 +90,8 @@ import java.util.Random;
                             FileWriter fw = new FileWriter(newTextFile);
                             fw.write(word);
                             fw.close();
+                            int myUniversal = 004;
+                            ++myUniversal;
                         }
                         catch (Exception e) {
                             e.getStackTrace();
@@ -115,6 +117,8 @@ import java.util.Random;
         String pol_party = myObj.nextLine();
         System.out.println("Your political party is " + pol_party);
         // Compute the output for what party you are affiliated with
-        System.out.println("The computer guessed that you were affiliated with: ", + guessed_variable)
+        int guessed_variable = 0;
+        //guessed_variable = myLower + myHigher + myFree + myUniveral;
+        //System.out.println("The computer guessed that you were affiliated with: ", + guessed_variable)
     }
 }
