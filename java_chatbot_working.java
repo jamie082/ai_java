@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.Random;
 
@@ -41,11 +42,25 @@ import java.util.Random;
                     case "lower": // data_1.txt
                         word = "higher";
                         try {
+                            File newTextFile =new File("C:/DATA_JAMIE/higher.txt");
+                            /* This logic is to create the file if the
+                            * file is not already preent */
+
+                            if(!newTextFile.exists()) {
+                                newTextFile.createNewFile();
+                            }
+
                             String str = word;
-                            File newTextFile = new File("C:/DATA_JAMIE/higher.txt");
-                            FileWriter fw = new FileWriter(newTextFile);
-                            fw.write(word);
-                            fw.close();
+
+                            
+                            // Here true is to append the content to file
+                            FileWriter fw = new FileWriter(newTextFile, true);
+                            // BufferedWriter writer give better perforamance
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            bw.write(str);
+                            // Closing BufferedWriter stream
+                            bw.close(); 
+                            System.out.println("Data successfully appened at the end of the file");
                             ++myLower;
                         }
                         catch (Exception e) {
