@@ -8,7 +8,7 @@ import java.util.Random;
  class loop {
 
     public static void main(String[] args) {  // type in these questions in the prompt to ask it the questions
-        String[] cannedPhrases = {"Do you want free universal income for people with no income?",   // Democrat
+        String[] cannedPhrases = {"Do you want legalization in all 50 states?",   // Democrat
                                   "What do you want to do about lower taxes for the rich?", // Democrat
                                   "What do you want to do about people who earn higher than $450,000 yearly?",  // Republican
                                   "What do you want to do about universal basic income for democratic states?", // Democrat
@@ -96,25 +96,51 @@ import java.util.Random;
                     case "free": // data_3.txt
                         word = "Democrat";
                         try {
+                            File newTextFile =new File("C:/DATA_JAMIE/democrat.txt");
+                            /* This logic is to create the file if the
+                            * file is not already preent */
+
+                            if(!newTextFile.exists()) {
+                                newTextFile.createNewFile();
+                            }
+
                             String str = word;
-                            File newTextFile = new File("C:/DATA_JAMIE/democrat.txt");
-                            FileWriter fw = new FileWriter(newTextFile);
-                            fw.write(word);
-                            fw.close();
+
+                            // Here true is to append the content to file
+                            FileWriter fw = new FileWriter(newTextFile, true);
+                            // BufferedWriter writer give better perforamance
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            bw.write(str + "\n");
+                            // Closing BufferedWriter stream
+                            bw.close(); 
+                            System.out.println("Data successfully appened at the end of the file");
                             ++myFree;
                         }
                         catch (Exception e) {
                             e.getStackTrace();
                         }
                         break;
-                    case "universal": // data_4.txt
-                        word = "Democrat";
+                    case "marijuana": // data_4.txt
+                        word = "banned";
                         try {
+                            File newTextFile =new File("C:/DATA_JAMIE/marijuana.txt");
+                            /* This logic is to create the file if the
+                            * file is not already preent */
+
+                            if(!newTextFile.exists()) {
+                                newTextFile.createNewFile();
+                            }
+
                             String str = word;
-                            File newTextFile = new File("C:/DATA_JAMIE/universal.txt");
-                            FileWriter fw = new FileWriter(newTextFile);
-                            fw.write(word);
-                            fw.close();
+
+                            // Here true is to append the content to file
+                            FileWriter fw = new FileWriter(newTextFile, true);
+                            // BufferedWriter writer give better perforamance
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            bw.write(str + "\n");
+                            // Closing BufferedWriter stream
+                            bw.close(); 
+                            System.out.println("Data successfully appened at the end of the file");
                             ++myUniversal;
                         }
                         catch (Exception e) {
