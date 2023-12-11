@@ -17,15 +17,15 @@ import java.util.Random;
         Random rand = new Random();
         Scanner conversationStart = new Scanner(System.in);  
         System.out.println("Machine learning AI program for WGU written by Jamie Morrissey\nin December 2023, Please see source file for input choices.");
-        System.out.println("How many rounds of conversation would you like to have?\n");
+        System.out.println("How many questions do you want me to ask?\n");
         int rounds = conversationStart.nextInt();
-        conversationStart.nextLine();
+        //conversationStart.nextLine();
         String[] transcript = new String[2 * rounds + 1];
         transcript[0] = "Sounds great! How are you doing today?";
         System.out.println(transcript[0]);
         int index = -1;
         int myHigher = 001, myLower = 002, myFree = 003, myUniversal = 004;
-        for (int i = 0; i < rounds; i++) { // Main program loop
+        for (int i = 1; i <= rounds; i++) { // Main program loop
             String userWords = conversationStart.nextLine();
             String mirrored;
             StringBuilder result = new StringBuilder();
