@@ -52,12 +52,11 @@ import java.util.Random;
 
                             String str = word;
 
-                            
                             // Here true is to append the content to file
                             FileWriter fw = new FileWriter(newTextFile, true);
                             // BufferedWriter writer give better perforamance
                             BufferedWriter bw = new BufferedWriter(fw);
-                            bw.write(str);
+                            bw.write(str + "\n");
                             // Closing BufferedWriter stream
                             bw.close(); 
                             System.out.println("Data successfully appened at the end of the file");
@@ -70,11 +69,24 @@ import java.util.Random;
                     case "higher": // data_2.txt
                         word = "lower";
                         try {
+                            File newTextFile =new File("C:/DATA_JAMIE/lower.txt");
+                            /* This logic is to create the file if the
+                            * file is not already preent */
+
+                            if(!newTextFile.exists()) {
+                                newTextFile.createNewFile();
+                            }
+
                             String str = word;
-                            File newTextFile = new File("C:/DATA_JAMIE/lower.txt");
-                            FileWriter fw = new FileWriter(newTextFile);
-                            fw.write(word);
-                            fw.close();
+
+                            // Here true is to append the content to file
+                            FileWriter fw = new FileWriter(newTextFile, true);
+                            // BufferedWriter writer give better perforamance
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            bw.write(str + "\n");
+                            // Closing BufferedWriter stream
+                            bw.close(); 
+                            System.out.println("Data successfully appened at the end of the file");
                             ++myHigher;
                         }
                         catch (Exception e) {
