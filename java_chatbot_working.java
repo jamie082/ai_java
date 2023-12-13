@@ -46,7 +46,7 @@ import java.util.Random;
                     case "lower": // data_1.txt
                         word = "Democrat"; // write "higher" to data_1.txt
                         try {
-                            File newTextFile =new File("C:/DATA_JAMIE/higher.txt"); // open higher.txt for writing
+                            File newTextFile =new File("higher.txt"); // open higher.txt for writing
                             /* This logic is to create the file if the
                             * file is not already preent */
 
@@ -65,7 +65,7 @@ import java.util.Random;
                             bw.close();  // close bw
                             System.out.println("Data successfully appened at the end of the file");
                             // read text file in Java
-                            File myObj = new File("C:/DATA_JAMIE/higher.txt");
+                            File myObj = new File("higher.txt");
                             Scanner myReader = new Scanner(myObj);
                             while (myReader.hasNextLine()) {     // read the data
                                 String lower_string = myReader.nextLine();
@@ -81,7 +81,7 @@ import java.util.Random;
                     case "higher": // data_2.txt
                         word = "Republican"; // write "lower" to lower.txt
                         try {
-                            File newTextFile =new File("C:/DATA_JAMIE/lower.txt");
+                            File newTextFile =new File("lower.txt");
                             if(!newTextFile.exists()) {
                                 newTextFile.createNewFile();
                             }
@@ -96,7 +96,7 @@ import java.util.Random;
                             // Closing BufferedWriter stream
                             bw.close(); 
                             System.out.println("Data successfully appeded at the end of the file");
-                            File myObj2 = new File("C:/DATA_JAMIE/lower.txt");
+                            File myObj2 = new File("lower.txt");
                             Scanner myReader = new Scanner(myObj2);
                             while (myReader.hasNextLine()) {
                                 String higher_string = myReader.nextLine();
@@ -111,7 +111,7 @@ import java.util.Random;
                     case "free": // data_3.txt
                         word = "Democrat";
                         try {
-                            File newTextFile =new File("C:/DATA_JAMIE/democrat.txt"); // open Text file for writing, democrat.txt
+                            File newTextFile =new File("free.txt"); // open Text file for writing, democrat.txt
                             /* This logic is to create the file if the
                             * file is not already preent */
 
@@ -129,7 +129,7 @@ import java.util.Random;
                             // Closing BufferedWriter stream
                             bw.close(); 
                             System.out.println("Data successfully appened at the end of the file");
-                            File myObj2 = new File("C:/DATA_JAMIE/democrat.txt");
+                            File myObj2 = new File("free.txt");
                             Scanner myReader = new Scanner(myObj2);
                             while (myReader.hasNextLine()) {
                                 String free_string = myReader.nextLine();
@@ -144,7 +144,7 @@ import java.util.Random;
                     case "legalization": // data_4.txt
                         word = "Democrat";
                         try {
-                            File newTextFile =new File("C:/DATA_JAMIE/marijuana.txt");
+                            File newTextFile =new File("legalization.txt");
                             /* This logic is to create the file if the
                             * file is not already preent */
 
@@ -162,7 +162,7 @@ import java.util.Random;
                             // Closing BufferedWriter stream
                             bw.close();  // close data file 
                             System.out.println("Data successfully appened at the end of the file");
-                            File myObj2 = new File("C:/DATA_JAMIE/marijuana.txt");
+                            File myObj2 = new File("legalization.txt");
                             Scanner myReader = new Scanner(myObj2);
                             while (myReader.hasNextLine()) {
                                 String legalization_string = myReader.nextLine();
